@@ -1,0 +1,58 @@
+.container {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.container_data {
+  width: 650px;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .container_data {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.logincontainer {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.remember-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.checkbox {
+  margin-right: 10px;
+}
+
+.logincard {
+  height: max-content;
+  width: 100%;
+  padding: 1.25rem;
+  border: 1px solid var(--white);
+  border-radius: 0.3rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.loading-btn {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.loading-btn div {
+  margin-right: 5px;
+}
