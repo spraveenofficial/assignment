@@ -1,0 +1,21 @@
+.logincontainer {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.logincard {
+  min-height: 300px;
+  width: 100%;
+  padding: 1.25rem;
+  border: 1px solid var(--white);
+  border-radius: 0.3rem;
+}
+
+.cardmain {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
