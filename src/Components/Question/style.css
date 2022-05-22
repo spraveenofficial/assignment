@@ -1,0 +1,9 @@
+.questionmain {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.answer-container {
+  text-align: center;
+}
