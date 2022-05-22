@@ -1,8 +1,7 @@
-import { useState } from "react";
 import "./style.css";
-export default function Rating({ onNext }) {
-  const [rating, setRating] = useState(0);
-  const [hover, setHover] = useState(0);
+export default function Rating(props) {
+  const [rating, setRating] = props.rating;
+  const [hover, setHover] = props.hover;
   return (
     <div className="star-rating">
       {[...Array(5)].map((star, index) => {
