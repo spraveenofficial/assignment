@@ -1,7 +1,14 @@
+import { useEffect } from "react";
 import "./style.css";
 export default function Rating(props) {
-  const [rating, setRating] = props.rating;
+  const [rating, setRating, isThisAvailable] = props.rating;
   const [hover, setHover] = props.hover;
+  console.log(isThisAvailable);
+  useEffect(() => {
+    if (isThisAvailable !== undefined) {
+      setRating(isThisAvailable.answer);
+    }
+  }, [isThisAvailable]);
   return (
     <div className="star-rating">
       {[...Array(5)].map((star, index) => {

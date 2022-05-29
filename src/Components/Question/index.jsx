@@ -7,15 +7,16 @@ import { useEffect, useState } from "react";
 import Options from "../Shared/render-option";
 import { useSurvey } from "../../Context/survey-context";
 export default function Question({ onBack, onNext }) {
-  const { dispatch } = useSurvey();
+  const { state, dispatch } = useSurvey();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [questions, setQuestions] = useState(question);
   const thisQuestion = questions.questions[currentQuestion];
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
   const [text, setText] = useState("");
-
-  // Function for handling the text input boxes.
+  const isThisAvailable = state.selectedAnswer.find(
+    (survey) => survey.id === thisQuestion.id
+  );
   const handleChange = (e) => {
     setText(e.target.value);
   };
@@ -65,7 +66,7 @@ export default function Question({ onBack, onNext }) {
           <h1 className="text-center text-white">{thisQuestion.title}</h1>
           <div className="answer-container">
             <Options
-              rating={[rating, setRating]}
+              rating={[rating, setRating, isThisAvailable]}
               hover={[hover, setHover]}
               options={thisQuestion.type}
               onChange={handleChange}
